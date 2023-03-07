@@ -44,16 +44,15 @@ async function displayData(photographers) {
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
 
-     // Renvoie vers la page du photographe
+    // Renvoie vers la page du photographe
 
-  userCardDOM.addEventListener("click", photographerPage);
+    userCardDOM.addEventListener("click", photographerPage);
 
-  function photographerPage() {
-    window.location.href= `photographer.html?id=${photographer.id}`
-
+    function photographerPage() {
+      window.location.href = `photographer.html?id=${photographer.id}`;
+    }
+  });
 }
-
-})}
 
 async function init() {
   // Récupère les datas des photographes
@@ -62,15 +61,3 @@ async function init() {
 }
 
 init();
-
-
-
-
-
-
-
-
-
-
-
-

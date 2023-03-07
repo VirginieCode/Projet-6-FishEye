@@ -39,12 +39,12 @@ h1 {
     flex-direction: column;
 }
 
-.photographer_section article h2 {
+.photographerName {
     color: #D3573C;
     font-size: 36px;
 }
 
-.photographer_section article img {
+.photographerimg {
     height: 200px;
     width: 200px;
     border-radius: 50%;
