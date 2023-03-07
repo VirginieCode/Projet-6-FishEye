@@ -41,6 +41,8 @@ function photographerFactory(data) {
     
   }
 
+  //Creation du dom pour le header de la page photographe
+
 function getHeaderPageDOM(){
 
 const header = document.createElement("header");
@@ -55,6 +57,10 @@ cityAndCountryParagraphe.textContent = `${city}, ${country}`;
 const taglineParagraphe = document.createElement("p");
 taglineParagraphe.textContent = tagline;
 
+const nameAndInfosContainer = document.createElement("div");
+nameAndInfosContainer.appendChild(h1);
+nameAndInfosContainer.appendChild(paragraphe)
+
 
 const img = document.createElement("img");
 img.setAttribute("src", picture);
@@ -64,24 +70,64 @@ paragraphe.appendChild(cityAndCountryParagraphe);
 paragraphe.appendChild(taglineParagraphe);
 paragraphe.classList.add("paragrapheHeaderInfos")
 
-header.appendChild(h1);
-header.appendChild(paragraphe);
+header.appendChild(nameAndInfosContainer)
 header.appendChild(img);
 
 return header;
 
   }
 
-/*function getMainPageDOM(){
-
-const realisation = document.createElement("section");
-const img = document.createElement("img");
-
-
-  } */
 
   return { name, picture, id, city, country, tagline, price, getUserCardDOM, getHeaderPageDOM };
 }
+
+
+
+//Creation du Factory Media
+
+/*
+
+function MediaFactory(media) {
+
+const { id, photographerId, title, image, video, likes, date, price } = media;
+
+const image = `assets/photographers/SamplePhotos/${image}`;
+
+
+
+
+function getMedia{
+
+const mediaDisplay = document.createElement("div");
+const img = document.createElement("img");
+const title = document.createElement("p");
+title.textContent = title;
+const likesDisplay = document.createElement("div");
+const likes = document.createElement("p");
+like.textContent = likes;
+
+//Faire un const favicon pour le coeur des likes
+
+
+img.setAttribute("src", image);
+mediaDisplay.appendChild(img);
+mediaDisplay.appendChild(title);
+mediaDisplay.appendChild(likesDisplay);
+
+
+
+return mediaDisplay;
+
+
+}
+
+  return { id, photographerId, title, image, video, likes, date, price, getMedia };
+}
+
+
+*/
+
+
 
 
 

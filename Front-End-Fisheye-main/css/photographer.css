@@ -19,7 +19,13 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
+
+
 
 .modal {
     border-radius: 5px;

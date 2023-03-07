@@ -33,7 +33,7 @@ async function getPhotographers() {
 
   return data();
 
-  // et bien retourner le tableau photographers seulement une fois récupéré
+
 }
 
 async function displayData(photographers) {
