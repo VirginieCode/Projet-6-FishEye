@@ -1,11 +1,29 @@
 #contact_modal {
     display: none;
+   
 }
 
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+}
+
+.mediaSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.imageVideoMedia{
+    width: 300px;
+    height: 300px;
+}
+
+.titleLikesDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .contact_button {

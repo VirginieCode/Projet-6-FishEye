@@ -3,6 +3,8 @@ function photographerFactory(data) {
 
   const { name, portrait, id, city, country, tagline, price } = data;
 
+ 
+
   const picture = `assets/photographers/PhotographersIDPhotos/${portrait}`;
 
   function getUserCardDOM() {
@@ -76,14 +78,16 @@ header.appendChild(img);
 return header;
 
   }
-
+  
 
   return { name, picture, id, city, country, tagline, price, getUserCardDOM, getHeaderPageDOM };
 }
 
 
 
+
 //Creation du Factory Media
+
 
 
 
@@ -92,45 +96,49 @@ function MediaFactory(media) {
 
 const { id, photographerId, title, image, video, likes, date, price } = media;
 
-const thePicture = `assets/SamplePhotos/${photographerId}/${image}`;
+const thePicture = `assets/SamplePhotos/Mimi/${image}`;
 
 
 
 function getMedia(){
 
 
+const cardMedia = document.createElement("div");
 
 
-const mediaDisplay = document.createElement("div");
 const theImage = document.createElement("img");
 
 const titleParagraphe = document.createElement("p");
 titleParagraphe.textContent = title;
-const likesDisplay = document.createElement("div");
+const likesDisplay = document.createElement("p");
 const theLikes = document.createElement("p");
 theLikes.textContent = likes;
 likesDisplay.appendChild(theLikes)
 
+const titleLikesDisplay = document.createElement("div");
+titleLikesDisplay.appendChild(titleParagraphe);
+titleLikesDisplay.appendChild(likesDisplay);
+
+titleLikesDisplay.classList.add('titleLikesDisplay')
+
+cardMedia.appendChild(theImage);
+cardMedia.appendChild(titleLikesDisplay);
 
 
-
+theImage.classList.add('imageVideoMedia')
 
 //Faire un const favicon pour le coeur des likes
 
 
 theImage.setAttribute("src", thePicture);
-mediaDisplay.appendChild(theImage);
-mediaDisplay.appendChild(titleParagraphe);
-mediaDisplay.appendChild(likesDisplay);
 
 
-
-return mediaDisplay;
+return cardMedia;
 
 
 }
 
-  return { id, photographerId, title, thePicture, video, likes, date, price, getMedia };
+  return { id, photographerId, title, image, video, likes, date, price, getMedia };
 }
 
 

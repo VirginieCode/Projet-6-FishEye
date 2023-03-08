@@ -91,8 +91,10 @@ async function getMedias() {
 
 
 async function mediaData(media) {
-  const mediaSection = document.getElementById("main");
-
+  const themain = document.getElementById('main');
+  const mediaSection = document.createElement('section');
+  themain.appendChild(mediaSection);
+  mediaSection.classList.add('mediaSection')
   for (let i = 0; i < media.length; i++) {
     if (media[i].photographerId === id) {
     console.log(media[i])
