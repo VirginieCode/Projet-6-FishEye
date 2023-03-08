@@ -43,3 +43,81 @@ async function init() {
 init();
 
 
+
+
+//Fonction pour récupérer les médias
+
+
+async function getMedias() {
+
+
+  async function dataMedia() {
+    const response = await fetch("data/photographers.json");
+    const photographersData = await response.json();
+    const medias = photographersData.media;
+
+    console.log(medias);
+
+      let unMedia = medias.map((obj) => {
+      let id = obj.id;
+      let photographerId = obj.photographerId;
+      let title = obj.title;
+      let image = obj.image;
+      let video = obj.video;
+      let likes = obj.likes;
+      let date = obj.date;
+      let price = obj.price;
+      return { id, photographerId, title, image, video, likes, date, price};
+    });
+
+    console.log(unMedia)
+
+
+    return {
+      media: [...unMedia],
+    };
+  }
+  try {
+    photographersData = await dataMedia;
+  } catch {
+    console.error("il y a une erreur");
+    console.log(error);
+  }
+
+  return dataMedia();
+
+  
+}
+
+
+async function mediaData(media) {
+  const mediaSection = document.getElementById("main");
+
+  for (let i = 0; i < media.length; i++) {
+    if (media[i].photographerId === id) {
+    console.log(media[i])
+      const galleryModel = MediaFactory(media[i]);
+      const galleryDOM = galleryModel.getMedia();
+      mediaSection.appendChild(galleryDOM);
+
+     
+    
+    }
+  }
+}
+
+
+
+async function initialisation() {
+  // Récupère les datas des photographes
+  const { media } = await getMedias();
+  mediaData(media);
+}
+
+initialisation();
+
+
+
+
+
+

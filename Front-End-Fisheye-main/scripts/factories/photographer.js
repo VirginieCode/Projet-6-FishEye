@@ -85,33 +85,42 @@ return header;
 
 //Creation du Factory Media
 
-/*
+
 
 function MediaFactory(media) {
+  
 
 const { id, photographerId, title, image, video, likes, date, price } = media;
 
-const image = `assets/photographers/SamplePhotos/${image}`;
+const thePicture = `assets/SamplePhotos/${photographerId}/${image}`;
 
 
 
+function getMedia(){
 
-function getMedia{
+
+
 
 const mediaDisplay = document.createElement("div");
-const img = document.createElement("img");
-const title = document.createElement("p");
-title.textContent = title;
+const theImage = document.createElement("img");
+
+const titleParagraphe = document.createElement("p");
+titleParagraphe.textContent = title;
 const likesDisplay = document.createElement("div");
-const likes = document.createElement("p");
-like.textContent = likes;
+const theLikes = document.createElement("p");
+theLikes.textContent = likes;
+likesDisplay.appendChild(theLikes)
+
+
+
+
 
 //Faire un const favicon pour le coeur des likes
 
 
-img.setAttribute("src", image);
-mediaDisplay.appendChild(img);
-mediaDisplay.appendChild(title);
+theImage.setAttribute("src", thePicture);
+mediaDisplay.appendChild(theImage);
+mediaDisplay.appendChild(titleParagraphe);
 mediaDisplay.appendChild(likesDisplay);
 
 
@@ -121,11 +130,9 @@ return mediaDisplay;
 
 }
 
-  return { id, photographerId, title, image, video, likes, date, price, getMedia };
+  return { id, photographerId, title, thePicture, video, likes, date, price, getMedia };
 }
 
-
-*/
 
 
 
