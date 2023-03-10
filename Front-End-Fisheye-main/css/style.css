@@ -54,3 +54,16 @@ h1 {
     color: #901C1C;
     font-size: 20px;
 }
+
+.infosPhotographer{
+    text-align: center;
+}
+
+.priceParagraphe{
+    color: #757575;
+}
+
+.cityAndCountryParagraphe{
+    color: #901C1C;
+    font-size: 20px;
+}

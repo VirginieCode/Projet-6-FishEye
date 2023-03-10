@@ -42,15 +42,9 @@ async function init() {
 
 init();
 
-
-
-
 //Fonction pour récupérer les médias
 
-
 async function getMedias() {
-
-
   async function dataMedia() {
     const response = await fetch("data/photographers.json");
     const photographersData = await response.json();
@@ -58,7 +52,7 @@ async function getMedias() {
 
     console.log(medias);
 
-      let unMedia = medias.map((obj) => {
+    let unMedia = medias.map((obj) => {
       let id = obj.id;
       let photographerId = obj.photographerId;
       let title = obj.title;
@@ -67,11 +61,10 @@ async function getMedias() {
       let likes = obj.likes;
       let date = obj.date;
       let price = obj.price;
-      return { id, photographerId, title, image, video, likes, date, price};
+      return { id, photographerId, title, image, video, likes, date, price };
     });
 
-    console.log(unMedia)
-
+    console.log(unMedia);
 
     return {
       media: [...unMedia],
@@ -85,30 +78,37 @@ async function getMedias() {
   }
 
   return dataMedia();
-
-  
 }
 
+// Creation section + ajout des médias dedans
 
 async function mediaData(media) {
-  const themain = document.getElementById('main');
-  const mediaSection = document.createElement('section');
+  const themain = document.getElementById("main");
+  const mediaSection = document.createElement("section");
   themain.appendChild(mediaSection);
-  mediaSection.classList.add('mediaSection')
+  mediaSection.classList.add("mediaSection");
+
   for (let i = 0; i < media.length; i++) {
     if (media[i].photographerId === id) {
-    console.log(media[i])
+      console.log(media[i]);
       const galleryModel = MediaFactory(media[i]);
       const galleryDOM = galleryModel.getMedia();
       mediaSection.appendChild(galleryDOM);
-
-     
-    
     }
   }
+
+  const encartModel = MediaFactory(media);
+  const encartDOM = encartModel.getEncartInfos();
+  mediaSection.appendChild(encartDOM);
+
+  /*
+
+//Test pour full image 
+
+      const testModel = MediaFactory(media);
+      const testDOM = testModel.fullImage();
+      mediaSection.appendChild(testDOM); */
 }
-
-
 
 async function initialisation() {
   // Récupère les datas des photographes
@@ -117,9 +117,4 @@ async function initialisation() {
 }
 
 initialisation();
-
-
-
-
-
 

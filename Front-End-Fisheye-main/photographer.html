@@ -4,6 +4,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://kit.fontawesome.com/0d3f9b49a6.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
@@ -23,15 +24,15 @@
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-            <label>nom</label>
-						<input />
-            <label>email</label>
-						<input />
-            <label>Votre message</label>
-						<input />
+					<div aria-labelledby="CoordonnéesFormulaire">
+						<label for="prenom">Prénom</label>
+						<input type="text" name ="prenom" id="prenom"/>
+            <label for="nom">Nom</label>
+            <input type="text" name ="nom" id="nom"/>
+            <label for="email">Email</label>
+            <input type="text" name ="email" id="email"/>
+            <label for="message">Votre message</label>
+            <input type="text" name ="message" id="message"/>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
@@ -42,5 +43,6 @@
     <script src="/scripts/pages/photographer.js"></script>
     <script src="scripts/factories/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    
   </body>
 </html>

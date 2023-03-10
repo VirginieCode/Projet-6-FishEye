@@ -1,5 +1,9 @@
 #contact_modal {
     display: none;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
    
 }
 
@@ -13,17 +17,42 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .imageVideoMedia{
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 350px;
 }
 
 .titleLikesDisplay{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #901C1C;
+
+}
+
+.heartLikePicture {
+    color:#901C1C;
+}
+
+.heartLikeEncart{
+    margin-left: 5px;
+}
+
+.likesDisplay{
+    display: flex;
+}
+
+.likesDisplayEncart{
+    display: flex;
+    align-items: center;
+}
+
+.theLikeNumber{
+margin-right: 5px;
 }
 
 .contact_button {
@@ -99,3 +128,14 @@ form input {
     border-radius: 5px;
 }
 
+.encartInfos{
+    width: 300px;
+    height: 50px;
+    background-color: #D3573C;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-around;
+}
