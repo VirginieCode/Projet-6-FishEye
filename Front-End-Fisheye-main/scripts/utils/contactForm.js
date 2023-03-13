@@ -5,9 +5,6 @@ function displayModal() {
   main.style.opacity = "50%";
   main.setAttribute("aria-hidden", "true");
   modal.setAttribute("aria-hidden", "false");
-
-
-
 }
 
 function closeModal() {
@@ -28,8 +25,6 @@ const prenom = document.getElementById("prenom");
 const nom = document.getElementById("nom");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
-
-
 
 console.log(nom);
 

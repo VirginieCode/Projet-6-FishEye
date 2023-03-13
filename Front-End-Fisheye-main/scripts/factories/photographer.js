@@ -91,14 +91,12 @@ function MediaFactory(media) {
 
   const name = document.querySelector(".photographerName").innerHTML;
 
-
   const thePicture = `assets/SamplePhotos/${name}/${image}`;
   const theVideo = `assets/SamplePhotos/${name}/${video}`;
   const theImage = document.createElement("img");
   theImage.setAttribute("id", "mediaImagesVideos");
   const theClip = document.createElement("video");
-  theClip.setAttribute("type","video/mp4");
-
+  theClip.setAttribute("type", "video/mp4");
 
   function getMedia() {
     const cardMedia = document.createElement("div");
@@ -126,36 +124,25 @@ function MediaFactory(media) {
     //Creation du carroussel
 
     theImage.onclick = function () {
-
-      const carroussel = document.createElement('div');
-      carroussel.classList.add('carrousel');
-    const sectionMedia = document.querySelector(".mediaSection");
+      const carroussel = document.createElement("div");
+      carroussel.classList.add("carrousel");
+      const sectionMedia = document.querySelector(".mediaSection");
       sectionMedia.appendChild(carroussel);
       carroussel.appendChild(theImage);
- 
-      
-    theImage.classList.add("fullImage");
 
-
-      
+      theImage.classList.add("fullImage");
     };
 
-
     theClip.onclick = function () {
-
-      const carroussel = document.createElement('div');
-      carroussel.classList.add('carrousel');
-    const sectionMedia = document.querySelector(".mediaSection");
+      const carroussel = document.createElement("div");
+      carroussel.classList.add("carrousel");
+      const sectionMedia = document.querySelector(".mediaSection");
       sectionMedia.appendChild(carroussel);
       carroussel.appendChild(theClip);
 
       theClip.classList.add("fullImage");
- 
-      
-   // theImage.classList.add("fullImage");
 
-
-      
+      // theImage.classList.add("fullImage");
     };
 
     likesDisplay.classList.add("likesDisplay");
@@ -214,21 +201,17 @@ function MediaFactory(media) {
 
     const encartpriceLikes = document.createElement("p");
 
-   /*const thePrice = document.querySelector(".priceParagraphe").innerHTML;
+    /*const thePrice = document.querySelector(".priceParagraphe").innerHTML;
     encartInfos.textContent = `${thePrice}`;
 */
     encartInfos.appendChild(likesDisplay);
-   // encartInfos.appendChild(thePrice);
+    // encartInfos.appendChild(thePrice);
 
     encartInfos.appendChild(encartpriceLikes);
 
     const sectionMedia = document.querySelector(".mediaSection");
 
     sectionMedia.appendChild(encartInfos);
-
-    
-
-  
 
     return encartInfos;
   }
