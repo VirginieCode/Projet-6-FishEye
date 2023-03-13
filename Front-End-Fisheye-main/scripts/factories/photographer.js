@@ -89,10 +89,16 @@ function photographerFactory(data) {
 function MediaFactory(media) {
   const { id, photographerId, title, image, video, likes, date, price } = media;
 
-  const thePicture = `assets/SamplePhotos/Mimi/${image}`;
-  const theVideo = `assets/SamplePhotos/Mimi/${video}`;
+  const name = document.querySelector(".photographerName").innerHTML;
+
+
+  const thePicture = `assets/SamplePhotos/${name}/${image}`;
+  const theVideo = `assets/SamplePhotos/${name}/${video}`;
   const theImage = document.createElement("img");
+  theImage.setAttribute("id", "mediaImagesVideos");
   const theClip = document.createElement("video");
+  theClip.setAttribute("type","video/mp4");
+
 
   function getMedia() {
     const cardMedia = document.createElement("div");
@@ -120,9 +126,37 @@ function MediaFactory(media) {
     //Creation du carroussel
 
     theImage.onclick = function () {
-      console.log('test')
+
+      const carroussel = document.createElement('div');
+      carroussel.classList.add('carrousel');
+    const sectionMedia = document.querySelector(".mediaSection");
+      sectionMedia.appendChild(carroussel);
+      carroussel.appendChild(theImage);
+ 
+      
+    theImage.classList.add("fullImage");
+
+
+      
     };
 
+
+    theClip.onclick = function () {
+
+      const carroussel = document.createElement('div');
+      carroussel.classList.add('carrousel');
+    const sectionMedia = document.querySelector(".mediaSection");
+      sectionMedia.appendChild(carroussel);
+      carroussel.appendChild(theClip);
+
+      theClip.classList.add("fullImage");
+ 
+      
+   // theImage.classList.add("fullImage");
+
+
+      
+    };
 
     likesDisplay.classList.add("likesDisplay");
     const titleLikesDisplay = document.createElement("div");
@@ -136,13 +170,13 @@ function MediaFactory(media) {
     if (image) {
       cardMedia.appendChild(theImage);
 
+      cardMedia.classList.add("cardMedia");
+
       cardMedia.appendChild(titleLikesDisplay);
 
       theImage.classList.add("imageVideoMedia");
 
       theImage.setAttribute("src", thePicture);
-
-    
     } else {
       theClip.classList.add("imageVideoMedia");
       cardMedia.appendChild(theClip);
@@ -150,12 +184,17 @@ function MediaFactory(media) {
       theClip.setAttribute("src", theVideo);
     }
 
-  
-
     return cardMedia;
   }
 
   function getEncartInfos() {
+    /*
+    const likesArray = [];
+    likesArray.push(likes);
+    likes
+    console.log(likesArray)
+
+*/
     const encartInfos = document.createElement("div");
 
     encartInfos.classList.add("encartInfos");
@@ -174,9 +213,12 @@ function MediaFactory(media) {
     likesDisplay.classList.add("likesDisplayEncart");
 
     const encartpriceLikes = document.createElement("p");
-    encartpriceLikes.textContent = "Prix journalier";
 
+   /*const thePrice = document.querySelector(".priceParagraphe").innerHTML;
+    encartInfos.textContent = `${thePrice}`;
+*/
     encartInfos.appendChild(likesDisplay);
+   // encartInfos.appendChild(thePrice);
 
     encartInfos.appendChild(encartpriceLikes);
 
@@ -184,13 +226,11 @@ function MediaFactory(media) {
 
     sectionMedia.appendChild(encartInfos);
 
+    
+
+  
+
     return encartInfos;
-  }
-
-  //test pour full image
-
-  function fullImage() {
-    console.log(theImage);
   }
 
   return {
@@ -204,6 +244,5 @@ function MediaFactory(media) {
     price,
     getMedia,
     getEncartInfos,
-    fullImage,
   };
 }

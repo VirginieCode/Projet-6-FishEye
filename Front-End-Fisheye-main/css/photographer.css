@@ -1,141 +1,154 @@
 #contact_modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-   
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
+  background-color: #fafafa;
+  height: 300px;
+  margin: 0 100px;
 }
 
-.mediaSection{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-left: 20px;
-    margin-right: 20px;
+.mediaSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.imageVideoMedia{
-    width: 400px;
-    height: 350px;
+.imageVideoMedia {
+  width: 400px;
+  height: 350px;
 }
 
-.titleLikesDisplay{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #901C1C;
-
+.titleLikesDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #901c1c;
 }
 
 .heartLikePicture {
-    color:#901C1C;
+  color: #901c1c;
 }
 
-.heartLikeEncart{
-    margin-left: 5px;
+.heartLikeEncart {
+  margin-left: 5px;
 }
 
-.likesDisplay{
-    display: flex;
+.likesDisplay {
+  display: flex;
 }
 
-.likesDisplayEncart{
-    display: flex;
-    align-items: center;
+.likesDisplayEncart {
+  display: flex;
+  align-items: center;
 }
 
-.theLikeNumber{
-margin-right: 5px;
+.theLikeNumber {
+  margin-right: 5px;
+}
+
+.carrousel {
+    background-color: white;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullImage {
+  width: 1050px;
+  height: 900px;
 }
 
 .contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-
-
 .modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+  border-radius: 5px;
+  background-color: #db8876;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  margin: auto;
 }
 
 .modal header {
-    justify-content: space-between;
-    width: 100%;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .modal header img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .modal header h2 {
-    font-size: 64px;
-    font-weight: normal;
-    text-align: center;
+  font-size: 64px;
+  font-weight: normal;
+  text-align: center;
 }
 
 form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 form label {
-    color: #312E2E;
-    font-size: 36px;
+  color: #312e2e;
+  font-size: 36px;
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
 }
 
 form input {
-    width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 5px;
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
 }
 
-.encartInfos{
-    width: 300px;
-    height: 50px;
-    background-color: #D3573C;
-    position: fixed;
-    bottom: 0;
-    right: 20px;
-    border-radius: 10px 10px 0 0;
-    display: flex;
-    justify-content: space-around;
+.encartInfos {
+  width: 300px;
+  height: 50px;
+  background-color: #d3573c;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-around;
 }

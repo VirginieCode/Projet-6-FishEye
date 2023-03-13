@@ -100,14 +100,6 @@ async function mediaData(media) {
   const encartModel = MediaFactory(media);
   const encartDOM = encartModel.getEncartInfos();
   mediaSection.appendChild(encartDOM);
-
-  /*
-
-//Test pour full image 
-
-      const testModel = MediaFactory(media);
-      const testDOM = testModel.fullImage();
-      mediaSection.appendChild(testDOM); */
 }
 
 async function initialisation() {
@@ -117,4 +109,3 @@ async function initialisation() {
 }
 
 initialisation();
-
