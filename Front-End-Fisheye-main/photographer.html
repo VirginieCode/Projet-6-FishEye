@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
@@ -16,7 +16,7 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" alt="logo" class="logo" />
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -29,10 +29,10 @@
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" alt="close Modal" onclick="closeModal()" />
         </header>
         <form>
-          <div aria-labelledby="CoordonnéesFormulaire">
+          <div aria-labelledby="contact_modal">
             <label for="prenom">Prénom</label>
             <input type="text" name="prenom" id="prenom" />
             <label for="nom">Nom</label>
@@ -49,6 +49,7 @@
 
     <script src="/scripts/pages/index.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
+    <script src="scripts/factories/media.js"></script>
     <script src="scripts/factories/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

@@ -23,6 +23,7 @@
 .imageVideoMedia {
   width: 400px;
   height: 350px;
+  cursor: pointer;
 }
 
 .titleLikesDisplay {
@@ -51,23 +52,6 @@
 
 .theLikeNumber {
   margin-right: 5px;
-}
-
-.carrousel {
-  background-color: white;
-  position: fixed;
-  left: 0%;
-  top: 0%;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fullImage {
-  width: 1050px;
-  height: 900px;
 }
 
 .contact_button {
@@ -151,4 +135,53 @@ form input {
   border-radius: 10px 10px 0 0;
   display: flex;
   justify-content: space-around;
+}
+
+/* Lightbox */
+
+#lightbox{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width:100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+
+}
+
+#lightbox.active{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.slide{
+width: 800px;
+height: 600px;
+}
+
+.arrowsContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+  position: absolute;
+  z-index: 30;
+}
+
+.previousArrow, .nextArrow{
+  color:#901c1c;
+  font-size: 45px;
+
+}
+
+
+.lightboxClose{
+  color:#901c1c;
+  font-size: 45px;
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  padding-top: 80px;
+  margin-left: 65%;
 }

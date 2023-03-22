@@ -96,7 +96,6 @@ async function mediaData(media) {
       mediaSection.appendChild(galleryDOM);
     }
   }
-
   const encartModel = MediaFactory(media);
   const encartDOM = encartModel.getEncartInfos();
   mediaSection.appendChild(encartDOM);
