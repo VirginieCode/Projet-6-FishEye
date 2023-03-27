@@ -88,14 +88,108 @@ async function mediaData(media) {
   themain.appendChild(mediaSection);
   mediaSection.classList.add("mediaSection");
 
+  const gallery = [];
+
+  //Action pour chaque media
+
   for (let i = 0; i < media.length; i++) {
     if (media[i].photographerId === id) {
       console.log(media[i]);
       const galleryModel = MediaFactory(media[i]);
       const galleryDOM = galleryModel.getMedia();
       mediaSection.appendChild(galleryDOM);
+
+      const image = galleryDOM.querySelector(".imageVideoMedia");
+      const video = galleryDOM.querySelector(".imageVideoMedia video");
+      if (image) {
+        gallery.push(image);
+      } else if (video) {
+        gallery.push(video);
+      }
     }
   }
+
+  // Création de la lightbox
+
+  const lightbox = document.createElement("div");
+  lightbox.id = "lightbox";
+  const slide = document.createElement("div");
+  slide.id = "lightbox-slide";
+  lightbox.appendChild(slide);
+  const previousBtn = document.createElement("div");
+  previousBtn.id = "previousBtn";
+  previousBtn.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+  const nextBtn = document.createElement("div");
+  nextBtn.id = "nextBtn";
+  nextBtn.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+  const closeBtn = document.createElement("div");
+  closeBtn.id = "lightboxClose";
+  closeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+  lightbox.appendChild(previousBtn);
+  lightbox.appendChild(nextBtn);
+  lightbox.appendChild(closeBtn);
+  document.body.appendChild(lightbox);
+
+  // Initialisation de l'index a 0
+
+  let slideIndex = 0;
+
+  // Si image ou vidéo
+
+  function showSlide(index) {
+    slideIndex = index;
+    const currentMedia = gallery[index];
+    if (currentMedia.tagName === "IMG") {
+      slide.innerHTML = `<img src="${currentMedia.src}" alt="${currentMedia.alt}">`;
+    } else if (currentMedia.tagName === "VIDEO") {
+      slide.innerHTML = `<video src="${currentMedia.src}" controls></video>`;
+    }
+  }
+
+  showSlide(slideIndex);
+
+  //Création du système de slider
+
+  gallery.forEach((media, index) => {
+    media.addEventListener("click", () => {
+      showSlide(index);
+      lightbox.classList.add("active");
+    });
+  });
+
+  previousBtn.addEventListener("click", () => {
+    slideIndex = (slideIndex - 1 + gallery.length) % gallery.length;
+    showSlide(slideIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    slideIndex = (slideIndex + 1) % gallery.length;
+    showSlide(slideIndex);
+  });
+
+  closeBtn.addEventListener("click", (event) => {
+    lightbox.classList.remove("active");
+  });
+
+  // Mise en place de l'accssibilité du slider avec les touches right, left et escape
+
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.classList.contains("active")) {
+      if (event.key === "ArrowLeft") {
+        slideIndex = (slideIndex - 1 + gallery.length) % gallery.length;
+        showSlide(slideIndex);
+      } else if (event.key === "ArrowRight") {
+        slideIndex = (slideIndex + 1) % gallery.length;
+        showSlide(slideIndex);
+      } else if (event.key === "Escape") {
+        lightbox.classList.remove("active");
+      }
+    }
+  });
+
+  //Création de l'encart
+
   const encartModel = MediaFactory(media);
   const encartDOM = encartModel.getEncartInfos();
   mediaSection.appendChild(encartDOM);
