@@ -64,36 +64,7 @@ function MediaFactory(media) {
     return cardMedia;
   }
 
-  function getEncartInfos() {
-    const encartInfos = document.createElement("div");
 
-    encartInfos.classList.add("encartInfos");
-
-    const likesDisplay = document.createElement("div");
-
-    likesDisplay.textContent = "Likes";
-
-    heartLikeEncart = document.createElement("p");
-    heartLikeEncart.innerHTML = '<i class="fa-solid fa-heart"></i>';
-
-    heartLikeEncart.classList.add("heartLikeEncart");
-
-    likesDisplay.appendChild(heartLikeEncart);
-
-    likesDisplay.classList.add("likesDisplayEncart");
-
-    const encartpriceLikes = document.createElement("p");
-
-    encartInfos.appendChild(likesDisplay);
-
-    encartInfos.appendChild(encartpriceLikes);
-
-    const sectionMedia = document.querySelector(".mediaSection");
-
-    sectionMedia.appendChild(encartInfos);
-
-    return encartInfos;
-  }
 
   return {
     id,
@@ -105,6 +76,5 @@ function MediaFactory(media) {
     date,
     price,
     getMedia,
-    getEncartInfos,
   };
 }

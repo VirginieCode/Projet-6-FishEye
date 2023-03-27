@@ -190,9 +190,34 @@ async function mediaData(media) {
 
   //Création de l'encart
 
+  const encart = document.createElement('div');
+  themain.appendChild(encart);
+  encart.classList.add('encartInfos');
+  let totalLikes = [];
+  for (let i=0;i<media.length;i++){
+    if (media[i].photographerId === id) {
+      console.log(media[i].likes);
+      allLikes = media[i].likes;
+      totalLikes.push(allLikes);
+    }
+  
+  }
+  const likesAddition = totalLikes.reduce((acc, val) => acc + val);
+  console.log(likesAddition);
+  const LikesAndheart = document.createElement('div');
+ LikesAndheart.innerHTML =
+  `${likesAddition} <i class="fa-solid fa-heart"></i>`;
+  encart.appendChild(LikesAndheart);
+  LikesAndheart.classList.add('likesAndHeart');
+  
+ 
+  
+
+  /*
   const encartModel = MediaFactory(media);
   const encartDOM = encartModel.getEncartInfos();
   mediaSection.appendChild(encartDOM);
+  */
 }
 
 async function initialisation() {
